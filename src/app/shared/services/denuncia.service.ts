@@ -32,7 +32,22 @@ export class DenunciaService {
           tipo: 'carro',
           dono: null
         },
-        data: new Date()
+        data: new Date(),
+        vaga: {
+          id: 1,
+          codigo: 'V23C',
+          status: 'LIVRE',
+          quarteirao: {
+            id: 1,
+            latitude: -22.909716,
+            longitude: -43.2088947,
+            rua: {
+              id: 1,
+              nome: 'Rua das américas'
+            },
+            vagas: null
+          }
+        }
       },
       {
         id: 2,
@@ -56,7 +71,22 @@ export class DenunciaService {
           tipo: 'carro',
           dono: null
         },
-        data: new Date()
+        data: new Date(),
+        vaga: {
+          id: 1,
+          codigo: 'V567C',
+          status: 'LIVRE',
+          quarteirao: {
+            id: 2,
+            latitude: -22.910408,
+            longitude: -43.2064167,
+            rua: {
+              id: 1,
+              nome: 'Rua  do coala'
+            },
+            vagas: null
+          }
+        }
       },
       {
         id: 3,
@@ -80,7 +110,22 @@ export class DenunciaService {
           tipo: 'moto',
           dono: null
         },
-        data: new Date()
+        data: new Date(),
+        vaga: {
+          id: 1,
+          codigo: 'V223C',
+          status: 'LIVRE',
+          quarteirao: {
+            id: 2,
+            latitude: -22.910695,
+            longitude: -43.2060407,
+            rua: {
+              id: 1,
+              nome: 'Rua das chichilas'
+            },
+            vagas: null
+          }
+        }
       }
     ];
   }

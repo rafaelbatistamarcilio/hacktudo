@@ -18,6 +18,25 @@
     <ion-card-content>
       <ion-item>
         <ion-label text-wrap>
+          <ion-text color="primary"> Localizacao : </ion-text>
+          <ion-text>
+            <p> {{ denuncia.vaga.quarteirao.rua.nome }} vaga {{ denuncia.vaga.codigo }}</p>
+          </ion-text>
+        </ion-label>
+        <ion-icon slot="end" name="add" (click)="detalharVaga(denuncia.vaga.id)"></ion-icon>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label text-wrap>
+          <ion-text color="primary"> Data : </ion-text>
+          <ion-text>
+            <p> {{denuncia.data | date:'dd/MM/yyyy HH:mm:ss' }}</p>
+          </ion-text>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label text-wrap>
           <ion-text color="primary"> Veículo : </ion-text>
           <ion-text>
             <p> {{denuncia.veiculo.modelo }} cor {{denuncia.veiculo.cor }} placa {{denuncia.veiculo.placa }}</p>
@@ -41,8 +60,18 @@
           <ion-text>
             <p> {{denuncia.relator.nome }}</p>
           </ion-text>
-        </ion-label> 
+        </ion-label>
         <ion-icon slot="end" name="add" (click)="detalharUsuario(denuncia.relator.id)"></ion-icon>
+      </ion-item>
+
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src="https://image.flaticon.com/icons/svg/23/23765.svg"/>
+        </ion-avatar>
+        <ion-label text-wrap>
+          <ion-text color="primary"> Imagem : </ion-text>
+        </ion-label>
+        <ion-icon slot="end" name="add" (click)="detalharimagem(denuncia.imagem)"></ion-icon>
       </ion-item>
 
     </ion-card-content>

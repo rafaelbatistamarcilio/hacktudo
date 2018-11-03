@@ -26,4 +26,11 @@ export class DenunciaDetalheComponent implements OnInit {
     console.log(id); /**@todo detalhar usuário */
   }
 
+  detalharimagem(base64) {
+    console.log(base64); /**@todo detalhar usuário */
+  }
+
+  detalharVaga(vagaId) {
+    console.log(vagaId); /**@todo detalhar vaga */
+  }
 }

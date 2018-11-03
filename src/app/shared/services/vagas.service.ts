@@ -21,15 +21,45 @@ export class VagasService {
         vagas: [{
           id: 1,
           codigo: '1E',
-          status: 'LIVRE'
+          status: 'LIVRE',
+          quarteirao: {
+            id: 2,
+            latitude: -22.910695,
+            longitude: -43.2060407,
+            rua: {
+              id: 1,
+              nome: 'Rua das chichilas'
+            },
+            vagas: null
+          }
         }, {
           id: 2,
           codigo: '1D',
-          status: 'LIVRE'
+          status: 'LIVRE',
+          quarteirao: {
+            id: 2,
+            latitude: -22.910695,
+            longitude: -43.2060407,
+            rua: {
+              id: 1,
+              nome: 'Rua das chichilas'
+            },
+            vagas: null
+          }
         }, {
           id: 3,
           codigo: '2D',
-          status: 'OCUPADA'
+          status: 'OCUPADA',
+          quarteirao: {
+            id: 2,
+            latitude: -22.910695,
+            longitude: -43.2060407,
+            rua: {
+              id: 1,
+              nome: 'Rua das chichilas'
+            },
+            vagas: null
+          }
         }]
       },
       {
@@ -43,15 +73,45 @@ export class VagasService {
         vagas: [{
           id: 4,
           codigo: '1E',
-          status: 'LIVRE'
+          status: 'LIVRE',
+          quarteirao: {
+            id: 2,
+            latitude: -22.910695,
+            longitude: -43.2060407,
+            rua: {
+              id: 1,
+              nome: 'Rua das chichilas'
+            },
+            vagas: null
+          }
         }, {
           id: 5,
           codigo: '1D',
-          status: 'LIVRE'
+          status: 'LIVRE',
+          quarteirao: {
+            id: 2,
+            latitude: -22.910695,
+            longitude: -43.2060407,
+            rua: {
+              id: 1,
+              nome: 'Rua das chichilas'
+            },
+            vagas: null
+          }
         }, {
           id: 6,
           codigo: '2D',
-          status: 'OCUPADA'
+          status: 'OCUPADA',
+          quarteirao: {
+            id: 2,
+            latitude: -22.910695,
+            longitude: -43.2060407,
+            rua: {
+              id: 1,
+              nome: 'Rua das chichilas'
+            },
+            vagas: null
+          }
         }]
       }
     ];
