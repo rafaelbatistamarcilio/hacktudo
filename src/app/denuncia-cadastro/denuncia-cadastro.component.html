@@ -1,0 +1,36 @@
+<ion-header class="header header-md ">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button mode="md" defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="title-md "> Voltar </ion-title>
+    <ion-buttons slot="end">
+      <ion-button name="create" >Editar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-card>
+
+    <ion-card-header text-center >
+      <ion-title>Denunciar vaga irregular</ion-title>
+    </ion-card-header>
+
+    <ion-card-content *ngIf="true">
+        <ion-img [src]="imagem"></ion-img>
+      <!-- 
+      <ion-item>
+        <ion-label text-wrap>
+          <ion-text color="primary">
+            <h3>Tipo</h3>
+          </ion-text>
+          <p>teste valor</p>
+        </ion-label>
+      </ion-item> -->
+
+    </ion-card-content>
+    
+  </ion-card>
+  <ion-button color="success" style="padding: 0 1em " expand="block" type="button" id="btnSalvar" (click)="capturarImagem()">Capturar</ion-button>
+</ion-content>

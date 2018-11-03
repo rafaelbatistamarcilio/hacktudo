@@ -1,0 +1,52 @@
+<ion-header class="header header-md ">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button mode="md" defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="title-md "> Voltar </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+
+  <ion-card>
+
+    <ion-card-header text-center>
+      <ion-title>Detalhes da denuncia</ion-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-label text-wrap>
+          <ion-text color="primary"> Veículo : </ion-text>
+          <ion-text>
+            <p> {{denuncia.veiculo.modelo }} cor {{denuncia.veiculo.cor }} placa {{denuncia.veiculo.placa }}</p>
+          </ion-text>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label text-wrap>
+          <ion-text color="primary"> Infrator : </ion-text>
+          <ion-text>
+            <p> {{denuncia.infrator.nome }}</p>
+          </ion-text>
+        </ion-label>
+        <ion-icon slot="end" name="add" (click)="detalharUsuario(denuncia.infrator.id)"></ion-icon>
+      </ion-item>
+
+      <ion-item>
+        <ion-label text-wrap>
+          <ion-text color="primary"> Relator : </ion-text>
+          <ion-text>
+            <p> {{denuncia.relator.nome }}</p>
+          </ion-text>
+        </ion-label> 
+        <ion-icon slot="end" name="add" (click)="detalharUsuario(denuncia.relator.id)"></ion-icon>
+      </ion-item>
+
+    </ion-card-content>
+
+  </ion-card>
+  <!-- <ion-button color="success" style="padding: 0 1em " expand="block" type="button" id="btnSalvar">Detalhe vaga</ion-button> -->
+</ion-content>
