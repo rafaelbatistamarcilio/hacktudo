@@ -21,19 +21,19 @@ const routes: Routes = [
         component: PesquisaVagasComponent
     },
     {
-        path: 'vagas/auditoria',
+        path: 'vagas/auditoria/:id',
         component: AuditoriaVagasComponent
     },
     {
-        path: 'quarteirao/:id',
+        path: 'vagas/disponiveis/:id',
         component: VagasDisponiveisComponent
     },
     {
-        path: 'detalhe-vaga',
+        path: 'vagas/:id',
         component: DetalheVagaComponent
     },
     {
-        path: 'reserva-vaga',
+        path: 'vagas/reservar/:id',
         component: ReservaVagaComponent
     },
     {

@@ -8,10 +8,14 @@
 </ion-header>
 
 <ion-content id="content-container" padding fullscreen text-center>
+    <!-- <ion-item>
+        <ion-label text-center>Pesquisa de vagas</ion-label>
+      </ion-item> -->
 
-  <ion-title class="home-title"> Pesquisa de vagas </ion-title>
 
-  <agm-map *ngIf="posicaoUsuario"  [zoom]="15" [latitude]="posicaoUsuario.coords.latitude" [longitude]="posicaoUsuario.coords.longitude">
+  <!-- <ion-title class="home-title">  </ion-title> -->
+
+  <agm-map *ngIf="posicaoUsuario" style="height:100%;" [zoom]="15" [latitude]="posicaoUsuario.coords.latitude" [longitude]="posicaoUsuario.coords.longitude">
     <agm-marker
       *ngFor="let quarteirao of quarteiroes"
       [latitude]="quarteirao.latitude"
@@ -28,12 +32,18 @@
               <fa-icon [icon]="['fa', 'info-circle']"></fa-icon> Detalhes
             </a>
         </p>
+
+        <p>
+            <a class="clickable" (click)="auditar(quarteirao.id)">
+              <fa-icon [icon]="['fa', 'exclamation-triangle']"></fa-icon> Auditar
+            </a>
+        </p>
     </agm-info-window>
 
 
     </agm-marker>
   </agm-map>
-
+<!--
   <ion-item>
     <ion-label position="floating">Bairro</ion-label>
     <ion-input value="" ></ion-input>
@@ -41,5 +51,5 @@
   <ion-item>
     <ion-label position="floating">Rua</ion-label>
     <ion-input value=""  ></ion-input>
-  </ion-item>
+  </ion-item> -->
 </ion-content>

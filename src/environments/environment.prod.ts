@@ -7,5 +7,5 @@ export const environment = {
     NAME: 'DESPESAS_DB',
     VERSION: 1
   },
-  AMG_KEY: 'AIzaSyBNeIiCCS9f5tXda_0iy1kqkXtfVS7sUJM'
+  AMG_KEY: 'AIzaSyCDmMnhR1tQGoNOSa_Fvy7qC4Xjux4zFDI'
 };

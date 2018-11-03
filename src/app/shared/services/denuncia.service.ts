@@ -14,25 +14,12 @@ export class DenunciaService {
         id: 1,
         descricao: 'veiculo ocupando vaga registrada como livre',
         imagem: 'asdasdsad',
-        infrator: {
-          id: 1,
-          nome: 'Paulo',
-          documento: '12365213',
-          veiculos: null
-        },
+        placaInfrator: 'XTC98734',
         relator: {
           id: 1,
           nome: 'Ricardo',
           documento: '12365213',
           veiculos: null
-        },
-        veiculo: {
-          id: 1,
-          modelo: 'Palio',
-          cor: 'verde',
-          placa: 'XTZ6621',
-          tipo: 'carro',
-          dono: null
         },
         data: new Date(),
         vaga: {
@@ -54,27 +41,14 @@ export class DenunciaService {
       },
       {
         id: 2,
+        placaInfrator: 'XTC98734',
         descricao: 'veiculo ocupando vaga registrada como livre',
         imagem: 'asdasdsad',
-        infrator: {
-          id: 3,
-          nome: 'Luis',
-          documento: '12365213',
-          veiculos: null
-        },
         relator: {
           id: 4,
           nome: 'Pedro',
           documento: '12365213',
           veiculos: null
-        },
-        veiculo: {
-          id: 56,
-          modelo: 'Siena',
-          cor: 'preto',
-          placa: 'KTZ9934',
-          tipo: 'carro',
-          dono: null
         },
         data: new Date(),
         vaga: {
@@ -97,26 +71,13 @@ export class DenunciaService {
       {
         id: 3,
         descricao: 'veiculo ocupando vaga registrada como livre',
+        placaInfrator: 'XTC98734',
         imagem: 'asdasdsad',
-        infrator: {
-          id: 6,
-          nome: 'Guilherme',
-          documento: '12365213',
-          veiculos: null
-        },
         relator: {
           id: 9,
           nome: 'lauro',
           documento: '12365213',
           veiculos: null
-        },
-        veiculo: {
-          id: 23,
-          modelo: 'XR Tornado',
-          cor: 'amarelo',
-          placa: 'BTF7766',
-          tipo: 'moto',
-          dono: null
         },
         data: new Date(),
         vaga: {

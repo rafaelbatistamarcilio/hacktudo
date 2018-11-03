@@ -15,34 +15,17 @@
 
     <ion-item-sliding *ngFor="let vaga of quarteitao.vagas">
 
-      <ion-item (click)="detalhar(vaga.id)">
+      <ion-item>
         <ion-label text-wrap>
-          <ion-text color="primary"> {{ vaga.codigo }} </ion-text>
+          <ion-text color="primary">Vaga {{ vaga.codigo }} </ion-text>
           <ion-text>
-            <p>{{ vaga.status }}</p>
+            <p> Status {{ vaga.status }}</p>
           </ion-text>
-          <!-- <p style="overflow: hidden">{{ vaga.descricao }}</p> -->
         </ion-label>
-        <!-- <fa-icon [icon]="['fas', 'chevron-left']"></fa-icon> -->
+        <fa-icon style="color:mediumturquoise" *ngIf="vaga.status === 'OCUPADA'" size="2x" [icon]="['fas', 'search-plus']"  (click)="detalhar(vaga.id)"> </fa-icon>
       </ion-item>
-
-      <!-- <ion-item-options side="end" class="sliding-enabled">
-        <ion-item-option color="danger" (click)="excluir(despesa.id)">
-          <fa-icon [icon]="['fas', 'trash-alt']"></fa-icon>
-          <label style="padding: 0 5px">Excluir </label>
-        </ion-item-option>
-      </ion-item-options> -->
 
     </ion-item-sliding>
 
   </ion-list>
 </ion-content>
-
-<!-- <ion-footer>
-  <ion-toolbar>
-    <ion-tabs>
-      <ion-tab style="color:rgba(42, 103, 163, 0.2); font-weight: 700" label="Nova Despesa" href="/despesas/nova">
-      </ion-tab>
-    </ion-tabs>
-  </ion-toolbar>
-</ion-footer> -->

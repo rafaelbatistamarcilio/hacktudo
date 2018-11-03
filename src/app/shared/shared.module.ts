@@ -6,10 +6,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faDollarSign, faChevronLeft, faHandHoldingUsd, faTrashAlt, faInfoCircle, faParking } from '@fortawesome/free-solid-svg-icons';
+import { faDollarSign, faChevronLeft, faHandHoldingUsd, faTrashAlt, faInfoCircle, faParking,faMapMarkerAlt, faSearchPlus, faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 
 // Add an icon to the library for convenient access in other components
-library.add(faDollarSign, faChevronLeft, faHandHoldingUsd, faTrashAlt, faInfoCircle, faParking);
+library.add(faDollarSign, faChevronLeft, faHandHoldingUsd, faTrashAlt, faInfoCircle, faParking, faMapMarkerAlt, faSearchPlus, faExclamationTriangle);
 
 @NgModule({
   imports: [

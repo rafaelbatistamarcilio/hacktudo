@@ -4,6 +4,9 @@
       <ion-back-button mode="md" defaultHref="home"></ion-back-button>
     </ion-buttons>
     <ion-title class="title-md "> Voltar </ion-title>
+    <ion-buttons slot="end">
+      <ion-button name="create" (click)="toggleEditar()">Editar</ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -47,7 +50,7 @@
         <ion-item>
             <input type="hidden" formControlName="pagamento" />
           <ion-label position="floating">Forma de pagamento</ion-label>
-          <ion-select [interfaceOptions]="{header:'Previsão de saida'}"
+          <ion-select [interfaceOptions]="{header:'Forma de pagamento'}"
             interface="action-sheet" cancelText="Cancelar" class="form-control"
             (ionChange)="alterarPagamento($event.target.value)" >
             <ion-select-option value="DEBITO">Débito</ion-select-option>

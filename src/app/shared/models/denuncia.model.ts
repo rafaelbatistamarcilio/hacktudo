@@ -5,10 +5,13 @@ import { Vaga } from './vaga.model';
 export class Denuncia {
     id: number;
     descricao: string;
-    infrator: Usuario;
+    placaInfrator: string;
     relator: Usuario;
-    veiculo: Veiculo;
     imagem: string;
     data: Date;
     vaga: Vaga;
+
+    constructor() {
+        this.data = new Date();
+    }
 }

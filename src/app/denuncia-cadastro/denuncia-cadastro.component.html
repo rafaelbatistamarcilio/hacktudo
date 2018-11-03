@@ -14,23 +14,46 @@
   <ion-card>
 
     <ion-card-header text-center >
-      <ion-title>Denunciar vaga irregular</ion-title>
+      <ion-title>Denunciar irregularridade </ion-title>
     </ion-card-header>
 
     <ion-card-content *ngIf="true">
-        <ion-img [src]="imagem"></ion-img>
-      <!-- 
-      <ion-item>
-        <ion-label text-wrap>
-          <ion-text color="primary">
-            <h3>Tipo</h3>
-          </ion-text>
-          <p>teste valor</p>
-        </ion-label>
-      </ion-item> -->
 
+      <form *ngIf="true" [formGroup]="form">
+        <input type="hidden" formControlName="relator" />
+        <input type="hidden" formControlName="imagem" />
+
+        <ion-item>
+          <ion-label position="floating">Data</ion-label>
+          <input type="hidden" formControlName="data"/>
+          <ion-text   > {{ dataAtual | date:'dd/MM/yyyy HH:mm:ss'}}</ion-text>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Placa</ion-label>
+          <ion-input  formControlName="placaInfrator" ></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Descricao</ion-label>
+          <ion-textarea  formControlName="descricao" ></ion-textarea>
+        </ion-item>
+
+        <ion-item>
+          <input type="hidden" formControlName="vaga" />
+          <ion-label position="floating">Vaga</ion-label>
+          <ion-select [interfaceOptions]="{header:'Código da vaga'}"
+            interface="action-sheet" cancelText="Cancelar" class="form-control"
+            (ionChange)="vincularVaga($event.target.value)" >
+            <ion-select-option *ngFor="let vaga of quarteirao.vagas" value="vaga.idd">{{ vaga.codigo }}</ion-select-option>
+          </ion-select>
+        </ion-item>
+        
+        <ion-img [src]="imagem"></ion-img>
+      </form>
     </ion-card-content>
     
   </ion-card>
-  <ion-button color="success" style="padding: 0 1em " expand="block" type="button" id="btnSalvar" (click)="capturarImagem()">Capturar</ion-button>
+  <ion-button color="primary" style="padding: 0 1em " expand="block" type="button" id="btnCapturarimagem" (click)="capturarImagem()">Capturar</ion-button>
+  <ion-button color="success" style="padding: 0 1em " expand="block" type="button" id="btnSalvar" (click)="salvar()">Salvar</ion-button>
 </ion-content>

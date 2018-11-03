@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Router } from '@angular/router';
 // import { PopoverController, NavParams } from '@ionic/angular';
 
 @Component({
@@ -13,9 +14,7 @@ export class DetalheVagaComponent implements OnInit {
 
 
   hasID = true;
-  constructor() {
-
-  }
+  constructor(public router: Router) {  }
 
   ngOnInit() {
   }
@@ -25,6 +24,9 @@ export class DetalheVagaComponent implements OnInit {
     // console.log('click' + this.hasID.valueOf);
   }
 
+  reservarVaga(id) {
+    this.router.navigate(['vagas/reservar/' + id]);
+  }
   // presentPopover(ev) {
 
   //   const popover = this.popoverCtrl.create(PopoverPage, {

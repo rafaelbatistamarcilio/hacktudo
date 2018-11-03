@@ -4,9 +4,9 @@
       <ion-back-button mode="md" defaultHref="home"></ion-back-button>
     </ion-buttons>
     <ion-title class="title-md "> Voltar </ion-title>
-    <ion-buttons slot="end">
+    <!-- <ion-buttons slot="end">
       <ion-button name="create" (click)="toggleEditar()">Editar</ion-button>
-    </ion-buttons>
+    </ion-buttons> -->
   </ion-toolbar>
 </ion-header>
 
@@ -38,7 +38,7 @@
         <ion-label position="floating">Número da Vaga</ion-label>
         <ion-input value="12"  disabled="{{hasID}}"></ion-input>
       </ion-item>
-      <!-- 
+      <!--
       <ion-item>
         <ion-label text-wrap>
           <ion-text color="primary">
@@ -49,7 +49,7 @@
       </ion-item> -->
 
     </ion-card-content>
-    
+
   </ion-card>
-  <!-- <ion-button color="success" style="padding: 0 1em " expand="block" type="button" id="btnSalvar">Detalhe vaga</ion-button> -->
+  <ion-button color="success" style="padding: 0 1em " expand="block" type="button" (click)="reservarVaga()">Reservar vaga</ion-button>
 </ion-content>

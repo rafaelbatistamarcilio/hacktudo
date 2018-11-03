@@ -37,21 +37,11 @@
 
       <ion-item>
         <ion-label text-wrap>
-          <ion-text color="primary"> Veículo : </ion-text>
+          <ion-text color="primary"> Placa do veículo : </ion-text>
           <ion-text>
-            <p> {{denuncia.veiculo.modelo }} cor {{denuncia.veiculo.cor }} placa {{denuncia.veiculo.placa }}</p>
+            <p> {{denuncia.placaInfrator }}</p>
           </ion-text>
         </ion-label>
-      </ion-item>
-
-      <ion-item>
-        <ion-label text-wrap>
-          <ion-text color="primary"> Infrator : </ion-text>
-          <ion-text>
-            <p> {{denuncia.infrator.nome }}</p>
-          </ion-text>
-        </ion-label>
-        <ion-icon slot="end" name="add" (click)="detalharUsuario(denuncia.infrator.id)"></ion-icon>
       </ion-item>
 
       <ion-item>
@@ -77,5 +67,4 @@
     </ion-card-content>
 
   </ion-card>
-  <!-- <ion-button color="success" style="padding: 0 1em " expand="block" type="button" id="btnSalvar">Detalhe vaga</ion-button> -->
 </ion-content>

@@ -12,10 +12,12 @@ import { Pagamento } from "../shared/models/pagamento.model";
   styleUrls: ["./reserva-vaga.component.css"]
 })
 export class ReservaVagaComponent implements OnInit {
-  dataAtual:Date;
+  dataAtual: Date;
   horaReserva;
   reserva: Reserva;
   reservaForm: FormGroup;
+
+  hasID = true;
 
   usuarioLogado: Usuario;
   veiculoUtilizado: Veiculo;
@@ -64,6 +66,11 @@ export class ReservaVagaComponent implements OnInit {
     formaPagamento.tipo = forma;
     pagamento.formaPagamnto = formaPagamento;
     this.reservaForm.get("pagamento").setValue(pagamento);
+  }
+
+  toggleEditar() {
+    this.hasID = !this.hasID;
+    // console.log('click' + this.hasID.valueOf);
   }
 
   salvar() {

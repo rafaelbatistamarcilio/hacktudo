@@ -1,3 +1,44 @@
-<p>
-  vagas-disponiveis works!
-</p>
+<ion-header class="header header-md ">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button mode="md" defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="title-md "> Voltar </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-card>
+    <ion-card-header text-center>
+      <ion-title>Vagas disponiveis</ion-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label text-wrap>
+          <ion-text>
+            <p>Rua: Avenida das americas da vaga</p>
+          </ion-text>
+        </ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-content>
+      <ion-item-sliding *ngFor="let vaga of vagas">
+        <ion-item (click)="detalharvaga(vaga.id)" detail-push>
+          <ion-label text-wrap>
+            <ion-text color="primary">Codigo da vaga: {{vaga.codigo}} </ion-text>
+            <ion-text>
+              <p>Status: {{vaga.status}}</p>
+            </ion-text>
+            <!-- <p style="overflow: hidden">{{ vaga }}</p> -->
+          </ion-label>
+          <!-- <fa-icon [icon]="['fas', 'chevron-left']"></fa-icon> -->
+        </ion-item>
+      </ion-item-sliding>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- TODO Criar uma pagina simulando o pagamento -->
+
+</ion-content>

@@ -6,21 +6,13 @@
     <ion-item-sliding  *ngFor="let denuncia of denuncias" >
       <ion-item  (click)="detalharDenuncia(denuncia.id)">
         <ion-label text-wrap>
-          <ion-text color="primary"> {{denuncia.veiculo.modelo}} </ion-text>
+          <ion-text color="primary"> {{denuncia.descricao}} </ion-text>
           <ion-text>
             <p>{{denuncia.data | date:'dd/mm/yy HH:mm:ss'}}</p>
           </ion-text>
-          <p style="overflow: hidden">{{ denuncia.descricao }}</p>
+          <p style="overflow: hidden"> Denciada por {{ denuncia.relator.nome }}</p>
         </ion-label>
-        <fa-icon [icon]="['fas', 'chevron-left']"></fa-icon>
       </ion-item>
-
-      <!-- <ion-item-options side="end" class="sliding-enabled">
-        <ion-item-option color="danger" (click)="excluir(despesa.id)">  
-          <fa-icon [icon]="['fas', 'trash-alt']"></fa-icon>
-          <label style="padding: 0 5px">Excluir </label>
-        </ion-item-option>
-      </ion-item-options> -->
 
     </ion-item-sliding>
 
