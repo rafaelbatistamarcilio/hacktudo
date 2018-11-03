@@ -11,7 +11,7 @@ const routes: Routes = [
     { path: '404', component: NotFoundComponent },
 
     {
-        path: 'pesquisa-vagas',
+        path: 'vagas/pesquisa',
         component: PesquisaVagasComponent
     },
     {

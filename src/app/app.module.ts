@@ -14,6 +14,7 @@ import { SharedModule } from './shared/shared.module';
 import { PesquisaVagasComponent } from './pesquisa-vagas/pesquisa-vagas.component';
 import { AgmCoreModule } from '@agm/core';
 import { DetalheVagaComponent } from './detalhe-vaga/detalhe-vaga.component';
+import { ReservaVagaComponent } from './reserva-vaga/reserva-vaga.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { DetalheVagaComponent } from './detalhe-vaga/detalhe-vaga.component';
     MenuComponent,
 
     PesquisaVagasComponent,
-    DetalheVagaComponent
+    DetalheVagaComponent,
+    ReservaVagaComponent
   ],
   imports: [
     BrowserModule,

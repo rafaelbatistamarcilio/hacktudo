@@ -11,9 +11,33 @@
   
   <ion-title class="home-title"> Pesquisa de vagas </ion-title>
 
-  <agm-map [latitude]="latitude" [longitude]="longitude">
-    <!-- <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker> -->
+  <agm-map  [zoom]="15" [latitude]="latitude" [longitude]="longitude">
+    <agm-marker  
+      *ngFor="let quarteirao of quarteiroes" 
+      [latitude]="quarteirao.latitude" 
+      [longitude]="quarteirao.longitude" >
+
+      <agm-info-window>
+        <p> <strong> Rua {{ quarteirao.rua.nome }}</strong> </p>
+        <p>Vagas livres: {{ getVagasLivres(quarteirao) }}</p>
+        <p>
+            <a class="clickable" (click)="abrirVagas(quarteirao.id)">
+                <i class="fa fa-info-circle fa-2x" aria-hidden="true"> </i>
+                Detalhes
+            </a>
+        </p>
+    </agm-info-window>
+
+
+    </agm-marker>
   </agm-map>
   
-  
+  <ion-item>
+    <ion-label position="floating">Bairro</ion-label>
+    <ion-input value="" ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Rua</ion-label>
+    <ion-input value=""  ></ion-input>
+  </ion-item>
 </ion-content>
