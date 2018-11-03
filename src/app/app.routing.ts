@@ -5,6 +5,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { PesquisaVagasComponent } from './pesquisa-vagas/pesquisa-vagas.component';
 import { DetalheVagaComponent } from './detalhe-vaga/detalhe-vaga.component';
 import { AuditoriaVagasComponent } from './auditoria-vagas/auditoria-vagas.component';
+import { ReservaVagaComponent } from './reserva-vaga/reserva-vaga.component';
+import { DenunciasComponent } from './denuncias/denuncias.component';
 
 
 const routes: Routes = [
@@ -23,7 +25,14 @@ const routes: Routes = [
         path: 'detalhe-vaga',
         component: DetalheVagaComponent
     },
-
+    {
+      path: 'reserva-vaga',
+      component: ReservaVagaComponent
+    },
+    {
+      path: 'denuncias',
+      component: DenunciasComponent
+    },
     {
         path: 'despesas',
         loadChildren: './despesas/despesas.module#DespesasModule'

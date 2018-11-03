@@ -8,8 +8,9 @@
 </ion-header>
 
 <ion-content fullscreen>
-  <ion-label>Rua {{ quarteitao.rua.nome }}</ion-label>
-
+  <ion-item>
+    <ion-label>Rua {{ quarteitao.rua.nome }}</ion-label>
+  </ion-item>
   <ion-list lines="full" class="scroll-content">
 
     <ion-item-sliding *ngFor="let vaga of quarteitao.vagas">
@@ -26,7 +27,7 @@
       </ion-item>
 
       <!-- <ion-item-options side="end" class="sliding-enabled">
-        <ion-item-option color="danger" (click)="excluir(despesa.id)">  
+        <ion-item-option color="danger" (click)="excluir(despesa.id)">
           <fa-icon [icon]="['fas', 'trash-alt']"></fa-icon>
           <label style="padding: 0 5px">Excluir </label>
         </ion-item-option>

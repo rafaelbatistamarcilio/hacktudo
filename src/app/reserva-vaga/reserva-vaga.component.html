@@ -8,40 +8,47 @@
 </ion-header>
 
 <ion-content fullscreen>
-  <ion-card>
+  <form *ngIf="formObj" [formGroup]="formObj">
 
-    <ion-card-header text-center >
-      <ion-title>Reserva de vaga</ion-title>
-    </ion-card-header>
+    <ion-card>
 
-    <ion-card-content *ngIf="true">
-      <ion-item>
-        <ion-label position="floating">Municipio</ion-label>
-        <ion-input value="Rio de Janeiro"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Bairro</ion-label>
-        <ion-input value="Ramos"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Rua</ion-label>
-        <ion-input value="Avenida das Americas"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Número</ion-label>
-        <ion-input value="52311"></ion-input>
-      </ion-item>
-      <!-- 
-      <ion-item>
-        <ion-label text-wrap>
-          <ion-text color="primary">
-            <h3>Tipo</h3>
-          </ion-text>
-          <p>teste valor</p>
-        </ion-label>
-      </ion-item> -->
+      <ion-card-header text-center>
+        <ion-title>Reservar de vaga</ion-title>
+      </ion-card-header>
 
-    </ion-card-content>
-  </ion-card>
-  <ion-button color="success" style="padding: 0 1em " expand="block" type="button" id="btnSalvar">Reservar vaga</ion-button>
+      <ion-card-content *ngIf="true">
+
+        <ion-item>
+          <ion-label position="floating">Data da Reserva</ion-label>
+          <!-- <ion-datetime displayFormat="MM/YYYY" pickerFormat="MMMM YYYY" [(ngModel)]="dataAtual"></ion-datetime> -->
+          <ion-input value="{{dataAtual | date:'medium'}}"></ion-input>
+          <ion-datetime displayFormat="DD/MM/YYYY" formControlName="dataAtual" class="form-control"> </ion-datetime>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Horario da Reserva</ion-label>
+          <ion-input value="{{dataAtual | date:'HH:mm'}}"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Previsão de saida</ion-label>
+          <ion-select [interfaceOptions]="{header:'Tipo de despesa'}" interface="action-sheet"
+            class="form-control" formControlName="previsao">
+            <ion-select-option value="1">1 hora</ion-select-option>
+            <ion-select-option value="2">2 horas</ion-select-option>
+            <ion-select-option value="3">3 horas</ion-select-option>
+          </ion-select>
+
+          <!-- TODO criar um select com a escala de tempo -->
+          <ion-input value="Ramos"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Forma de pagamento</ion-label>
+          <!-- TODO criar um select com as formas aceitas pela API de pagamento-->
+          <ion-input value="52311"></ion-input>
+        </ion-item>
+
+      </ion-card-content>
+    </ion-card>
+    <ion-button color="success" style="padding: 0 1em " expand="block" type="button" id="btnSalvar">Confirmar vaga</ion-button>
+    <!-- TODO Criar uma pagina simulando o pagamento -->
+  </form>
 </ion-content>

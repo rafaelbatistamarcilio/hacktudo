@@ -22,7 +22,7 @@ export class DetalheVagaComponent implements OnInit {
 
   toggleEditar() {
     this.hasID = !this.hasID;
-    console.log('click' + this.hasID.valueOf);
+    // console.log('click' + this.hasID.valueOf);
   }
 
   // presentPopover(ev) {
