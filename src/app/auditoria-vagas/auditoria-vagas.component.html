@@ -1,0 +1,47 @@
+<ion-header class="header header-md ">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button mode="md" defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="title-md "> Voltar </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-label>Rua {{ quarteitao.rua.nome }}</ion-label>
+
+  <ion-list lines="full" class="scroll-content">
+
+    <ion-item-sliding *ngFor="let vaga of quarteitao.vagas">
+
+      <ion-item (click)="detalhar(vaga.id)">
+        <ion-label text-wrap>
+          <ion-text color="primary"> {{ vaga.codigo }} </ion-text>
+          <ion-text>
+            <p>{{ vaga.status }}</p>
+          </ion-text>
+          <!-- <p style="overflow: hidden">{{ vaga.descricao }}</p> -->
+        </ion-label>
+        <!-- <fa-icon [icon]="['fas', 'chevron-left']"></fa-icon> -->
+      </ion-item>
+
+      <!-- <ion-item-options side="end" class="sliding-enabled">
+        <ion-item-option color="danger" (click)="excluir(despesa.id)">  
+          <fa-icon [icon]="['fas', 'trash-alt']"></fa-icon>
+          <label style="padding: 0 5px">Excluir </label>
+        </ion-item-option>
+      </ion-item-options> -->
+
+    </ion-item-sliding>
+
+  </ion-list>
+</ion-content>
+
+<!-- <ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab style="color:rgba(42, 103, 163, 0.2); font-weight: 700" label="Nova Despesa" href="/despesas/nova">
+      </ion-tab>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer> -->

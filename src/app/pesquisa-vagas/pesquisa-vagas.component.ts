@@ -9,9 +9,6 @@ import { VagasService } from '../shared/services/vagas.service';
 })
 export class PesquisaVagasComponent implements OnInit {
 
-  latitude = -23.000997;
-  longitude = -43.3671755;
-
   quarteiroes: Quarteirao[];
 
   constructor(private vagasService: VagasService) {

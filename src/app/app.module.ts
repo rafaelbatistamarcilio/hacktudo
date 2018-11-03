@@ -15,6 +15,7 @@ import { PesquisaVagasComponent } from './pesquisa-vagas/pesquisa-vagas.componen
 import { AgmCoreModule } from '@agm/core';
 import { DetalheVagaComponent } from './detalhe-vaga/detalhe-vaga.component';
 import { ReservaVagaComponent } from './reserva-vaga/reserva-vaga.component';
+import { AuditoriaVagasComponent } from './auditoria-vagas/auditoria-vagas.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ReservaVagaComponent } from './reserva-vaga/reserva-vaga.component';
 
     PesquisaVagasComponent,
     DetalheVagaComponent,
-    ReservaVagaComponent
+    ReservaVagaComponent,
+    AuditoriaVagasComponent
   ],
   imports: [
     BrowserModule,

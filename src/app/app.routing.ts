@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { PesquisaVagasComponent } from './pesquisa-vagas/pesquisa-vagas.component';
 import { DetalheVagaComponent } from './detalhe-vaga/detalhe-vaga.component';
+import { AuditoriaVagasComponent } from './auditoria-vagas/auditoria-vagas.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,10 @@ const routes: Routes = [
     {
         path: 'vagas/pesquisa',
         component: PesquisaVagasComponent
+    },
+    {
+        path: 'vagas/auditoria',
+        component: AuditoriaVagasComponent
     },
     {
         path: 'detalhe-vaga',
