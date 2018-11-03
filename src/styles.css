@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+
+.shadow {
+  -webkit-box-shadow: 0 6px 4px -4px black;
+  -moz-box-shadow: 0 6px 4px -4px black;
+  box-shadow: 0 6px 4px -4px black;
+}
+
+.vs-0-5 {
+  margin-top: 0.5em
+}
+
+.ls-0-5 {
+  margin-left: 0.5em;
+  margin-right: 0.5em
+}

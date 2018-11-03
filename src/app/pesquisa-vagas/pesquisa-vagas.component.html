@@ -1,0 +1,19 @@
+<ion-header class="header header-md ">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button mode="md" defaultHref="home" ></ion-back-button>
+    </ion-buttons>
+    <ion-title class="title-md "> Voltar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content id="content-container" padding fullscreen text-center>
+  
+  <ion-title class="home-title"> Pesquisa de vagas </ion-title>
+
+  <agm-map [latitude]="latitude" [longitude]="longitude">
+    <!-- <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker> -->
+  </agm-map>
+  
+  
+</ion-content>

@@ -1,0 +1,24 @@
+<ion-menu side="start" type="overlay" menuId="app-menu" contentId="content-container">
+  <ion-header>
+    <ion-toolbar color="dark" >
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list lines="full">
+      <ion-item>
+        <ion-menu-button id="btn-despesas" (click)="goTo('home')"> Inicio </ion-menu-button>
+      </ion-item>
+      <ion-item>
+        <ion-menu-button id="btn-despesas" (click)="goTo('pesquisa-vagas')"> Pesquisar Vagas </ion-menu-button>
+      </ion-item>
+      <ion-item>
+        <ion-menu-button id="btn-despesas" (click)="goTo('detalhe-vaga')"> Detalhe da Vaga </ion-menu-button>
+      </ion-item>
+      <ion-item>
+        <ion-menu-button id="btn-despesas" (click)="goTo('despesas')"> Despesas </ion-menu-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>

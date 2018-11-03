@@ -1,0 +1,59 @@
+<ion-header class="header header-md ">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button mode="md" defaultHref="despesas" ></ion-back-button>
+    </ion-buttons>
+    <ion-title class="title-md "> Voltar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-card>
+
+    <ion-item>
+      <fa-icon [icon]="['fas', 'dollar-sign']"></fa-icon>
+      <ion-title>Despesa</ion-title>
+    </ion-item>
+
+    <ion-card-content *ngIf="despesa">
+
+      <ion-item>
+        <ion-label text-wrap>
+          <ion-text color="primary">
+            <h3>Tipo</h3>
+          </ion-text>
+          <p>{{despesa.tipo}}</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label text-wrap>
+          <ion-text color="primary">
+            <h3>Data</h3>
+          </ion-text>
+          <p>{{formatarData(despesa.data)}}</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label text-wrap>
+          <ion-text color="primary">
+            <h3>Valor</h3>
+          </ion-text>
+          <p>{{ despesa.valor | currency }}</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label text-wrap>
+          <ion-text color="primary">
+            <h3>Descrição</h3>
+          </ion-text>
+          <p>{{ despesa.descricao }}</p>
+        </ion-label>
+      </ion-item>
+
+    </ion-card-content>
+  </ion-card>
+  <ion-button color="success" style="padding: 0 1em " expand="block" type="button" id="btnSalvar" (click)="editar(despesa.id)">Editar</ion-button>
+</ion-content>

@@ -1,0 +1,63 @@
+<ion-header class="header header-md ">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button mode="md" defaultHref="despesas"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="title-md "> Voltar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+
+  <form *ngIf="formObj" [formGroup]="formObj">
+    <ion-card>
+
+      <ion-item>
+        <fa-icon [icon]="['fas', 'dollar-sign']"></fa-icon>
+        <ion-title>Nova despesa</ion-title>
+      </ion-item>
+
+      <ion-card-content >
+
+        <ion-item>
+          <ion-label [color]="isValid( formObj.get('tipo') )" position="floating">Tipo de despesa</ion-label>
+          <ion-select             
+            [interfaceOptions]="{header:'Tipo de despesa'}" 
+            interface="action-sheet" 
+            cancelText="Cancelar" 
+            class="form-control"
+            formControlName="tipo">
+            <ion-select-option value="Contas">Contas</ion-select-option>
+            <ion-select-option value="Mercado">Mercado</ion-select-option>
+            <ion-select-option value="Lazer">Lazer</ion-select-option>
+            <ion-select-option value="Pai">Pai</ion-select-option>
+            <ion-select-option value="Moto">Moto</ion-select-option>
+            <ion-select-option value="Outros">Outros</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label [color]="isValid( formObj.get('data') )" position="floating">
+            Data 
+            <ion-text *ngIf="idItemEditado" color="dark"> <sup> (data antiga {{ defaultDate | date:'dd/MM/yyyy' }} )</sup></ion-text> 
+          </ion-label> 
+          <ion-datetime  displayFormat="DD/MM/YYYY" formControlName="data" class="form-control"> </ion-datetime>
+        </ion-item>
+
+        <ion-item >
+          <ion-label [color]="isValid( formObj.get('valor') )" position="floating">Valor</ion-label>
+          <ion-input type="number" formControlName="valor" class="form-control"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label [color]="isValid( formObj.get('descricao') )" position="floating">Descrição</ion-label>
+          <ion-textarea formControlName="descricao" class="form-control"></ion-textarea>
+        </ion-item>        
+
+      </ion-card-content>
+    </ion-card>
+    
+    <ion-button style="padding: 0 1em " expand="block" type="button" id="btnSalvar" (click)="salvar()">Salvar</ion-button>
+  </form>
+
+</ion-content>
