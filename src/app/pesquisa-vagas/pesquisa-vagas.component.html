@@ -11,7 +11,7 @@
   
   <ion-title class="home-title"> Pesquisa de vagas </ion-title>
 
-  <agm-map  [zoom]="15" [latitude]="latitude" [longitude]="longitude">
+  <agm-map  [zoom]="15" [latitude]="quarteiroes[0].latitude" [longitude]="quarteiroes[0].longitude">
     <agm-marker  
       *ngFor="let quarteirao of quarteiroes" 
       [latitude]="quarteirao.latitude" 
