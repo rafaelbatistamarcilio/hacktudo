@@ -17,11 +17,13 @@ export class DenunciaService {
         infrator: {
           id: 1,
           nome: 'Paulo',
+          documento: '12365213',
           veiculos: null
         },
         relator: {
           id: 1,
           nome: 'Ricardo',
+          documento: '12365213',
           veiculos: null
         },
         veiculo: {
@@ -37,6 +39,7 @@ export class DenunciaService {
           id: 1,
           codigo: 'V23C',
           status: 'LIVRE',
+          tipo: 'IDOSO',
           quarteirao: {
             id: 1,
             latitude: -22.909716,
@@ -56,11 +59,13 @@ export class DenunciaService {
         infrator: {
           id: 3,
           nome: 'Luis',
+          documento: '12365213',
           veiculos: null
         },
         relator: {
           id: 4,
           nome: 'Pedro',
+          documento: '12365213',
           veiculos: null
         },
         veiculo: {
@@ -76,6 +81,7 @@ export class DenunciaService {
           id: 1,
           codigo: 'V567C',
           status: 'LIVRE',
+          tipo: 'NORMAL',
           quarteirao: {
             id: 2,
             latitude: -22.910408,
@@ -95,11 +101,13 @@ export class DenunciaService {
         infrator: {
           id: 6,
           nome: 'Guilherme',
+          documento: '12365213',
           veiculos: null
         },
         relator: {
           id: 9,
           nome: 'lauro',
+          documento: '12365213',
           veiculos: null
         },
         veiculo: {
@@ -115,6 +123,7 @@ export class DenunciaService {
           id: 1,
           codigo: 'V223C',
           status: 'LIVRE',
+          tipo: 'CPD',
           quarteirao: {
             id: 2,
             latitude: -22.910695,

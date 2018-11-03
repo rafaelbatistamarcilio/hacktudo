@@ -5,4 +5,5 @@ export class Usuario {
     id: number;
     nome: string;
     veiculos: Veiculo[];
+    documento: string;
 }

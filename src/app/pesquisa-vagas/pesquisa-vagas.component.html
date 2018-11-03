@@ -8,22 +8,24 @@
 </ion-header>
 
 <ion-content id="content-container" padding fullscreen text-center>
-  
+
   <ion-title class="home-title"> Pesquisa de vagas </ion-title>
 
   <agm-map  [zoom]="15" [latitude]="quarteiroes[0].latitude" [longitude]="quarteiroes[0].longitude">
-    <agm-marker  
-      *ngFor="let quarteirao of quarteiroes" 
-      [latitude]="quarteirao.latitude" 
+    <agm-marker
+      *ngFor="let quarteirao of quarteiroes"
+      [latitude]="quarteirao.latitude"
       [longitude]="quarteirao.longitude" >
 
       <agm-info-window>
         <p> <strong> Rua {{ quarteirao.rua.nome }}</strong> </p>
         <p>Vagas livres: {{ getVagasLivres(quarteirao) }}</p>
+        <p>Vagas CPD livres : {{ getVagasCpdLivres(quarteirao) }}</p>
+        <p>Vagas idoso livres : {{ getVagasIdososLivres(quarteirao) }}</p>
+
         <p>
             <a class="clickable" (click)="abrirVagas(quarteirao.id)">
-                <i class="fa fa-info-circle fa-2x" aria-hidden="true"> </i>
-                Detalhes
+              <fa-icon [icon]="['fa', 'info-circle']"></fa-icon> Detalhes
             </a>
         </p>
     </agm-info-window>
@@ -31,7 +33,7 @@
 
     </agm-marker>
   </agm-map>
-  
+
   <ion-item>
     <ion-label position="floating">Bairro</ion-label>
     <ion-input value="" ></ion-input>

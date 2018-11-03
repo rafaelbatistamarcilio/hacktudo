@@ -26,4 +26,16 @@ export class PesquisaVagasComponent implements OnInit {
   getVagasLivres(quarteirao: Quarteirao): number {
     return quarteirao.vagas.filter(vaga => vaga.status === 'LIVRE').length;
   }
+
+  getVagasCpdLivres(quarteirao: Quarteirao): number {
+    return quarteirao.vagas.filter(vaga => vaga.status === 'CPD').length;
+  }
+
+  getVagasIdososLivres(quarteirao: Quarteirao): number {
+    return quarteirao.vagas.filter(vaga => vaga.tipo === 'IDOSO').length;
+  }
+
+  capturarPosicaoUsuario() {
+
+  }
 }

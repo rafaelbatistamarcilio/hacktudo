@@ -22,6 +22,7 @@ export class VagasService {
           id: 1,
           codigo: '1E',
           status: 'LIVRE',
+          tipo: 'NORMAL',
           quarteirao: {
             id: 2,
             latitude: -22.910695,
@@ -36,6 +37,7 @@ export class VagasService {
           id: 2,
           codigo: '1D',
           status: 'LIVRE',
+          tipo: 'CPD',
           quarteirao: {
             id: 2,
             latitude: -22.910695,
@@ -50,6 +52,7 @@ export class VagasService {
           id: 3,
           codigo: '2D',
           status: 'OCUPADA',
+          tipo: 'IDOSO',
           quarteirao: {
             id: 2,
             latitude: -22.910695,
@@ -74,6 +77,7 @@ export class VagasService {
           id: 4,
           codigo: '1E',
           status: 'LIVRE',
+          tipo: 'NORMAL',
           quarteirao: {
             id: 2,
             latitude: -22.910695,
@@ -88,6 +92,7 @@ export class VagasService {
           id: 5,
           codigo: '1D',
           status: 'LIVRE',
+          tipo: 'NORMAL',
           quarteirao: {
             id: 2,
             latitude: -22.910695,
@@ -102,6 +107,7 @@ export class VagasService {
           id: 6,
           codigo: '2D',
           status: 'OCUPADA',
+          tipo: 'NORMAL',
           quarteirao: {
             id: 2,
             latitude: -22.910695,
