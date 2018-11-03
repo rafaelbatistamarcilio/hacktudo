@@ -19,6 +19,7 @@ import { AuditoriaVagasComponent } from './auditoria-vagas/auditoria-vagas.compo
 import { DenunciasComponent } from './denuncias/denuncias.component';
 import { DenunciaCadastroComponent } from './denuncia-cadastro/denuncia-cadastro.component';
 import { DenunciaDetalheComponent } from './denuncia-detalhe/denuncia-detalhe.component';
+import { VagasDisponiveisComponent } from './vagas-disponiveis/vagas-disponiveis.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { DenunciaDetalheComponent } from './denuncia-detalhe/denuncia-detalhe.co
     AuditoriaVagasComponent,
     DenunciasComponent,
     DenunciaCadastroComponent,
-    DenunciaDetalheComponent
+    DenunciaDetalheComponent,
+    VagasDisponiveisComponent
   ],
   imports: [
     BrowserModule,

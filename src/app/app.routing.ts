@@ -9,6 +9,7 @@ import { ReservaVagaComponent } from './reserva-vaga/reserva-vaga.component';
 import { DenunciasComponent } from './denuncias/denuncias.component';
 import { DenunciaCadastroComponent } from './denuncia-cadastro/denuncia-cadastro.component';
 import { DenunciaDetalheComponent } from './denuncia-detalhe/denuncia-detalhe.component';
+import { VagasDisponiveisComponent } from './vagas-disponiveis/vagas-disponiveis.component';
 
 
 const routes: Routes = [
@@ -24,24 +25,28 @@ const routes: Routes = [
         component: AuditoriaVagasComponent
     },
     {
+        path: 'quarteirao/:id',
+        component: VagasDisponiveisComponent
+    },
+    {
         path: 'detalhe-vaga',
         component: DetalheVagaComponent
     },
     {
-      path: 'reserva-vaga',
-      component: ReservaVagaComponent
+        path: 'reserva-vaga',
+        component: ReservaVagaComponent
     },
     {
-      path: 'denuncias/lista',
-      component: DenunciasComponent
+        path: 'denuncias/lista',
+        component: DenunciasComponent
     },
     {
-      path: 'denuncias/cadastro',
-      component: DenunciaCadastroComponent
+        path: 'denuncias/cadastro',
+        component: DenunciaCadastroComponent
     },
     {
-      path: 'denuncias/detalhe/:id',
-      component: DenunciaDetalheComponent
+        path: 'denuncias/detalhe/:id',
+        component: DenunciaDetalheComponent
     },
     {
         path: 'despesas',
