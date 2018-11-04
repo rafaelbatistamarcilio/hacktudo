@@ -1,15 +1,16 @@
-import { FormaPagamento } from "./../shared/models/forma-pagamento.model";
-import { Component, OnInit, ElementRef, ViewChild } from "@angular/core";
-import { FormGroup, FormBuilder, Validators } from "@angular/forms";
-import { Reserva } from "../shared/models/reserva.model";
-import { Usuario } from "../shared/models/usuario.model";
-import { Veiculo } from "../shared/models/veiculo.model";
-import { Pagamento } from "../shared/models/pagamento.model";
+import { FormaPagamento } from './../shared/models/forma-pagamento.model';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Reserva } from '../shared/models/reserva.model';
+import { Usuario } from '../shared/models/usuario.model';
+import { Veiculo } from '../shared/models/veiculo.model';
+import { Pagamento } from '../shared/models/pagamento.model';
+import { ReservaService } from '../shared/services/reserva.service';
 
 @Component({
-  selector: "app-reserva-vaga",
-  templateUrl: "./reserva-vaga.component.html",
-  styleUrls: ["./reserva-vaga.component.css"]
+  selector: 'app-reserva-vaga',
+  templateUrl: './reserva-vaga.component.html',
+  styleUrls: ['./reserva-vaga.component.css']
 })
 export class ReservaVagaComponent implements OnInit {
   dataAtual: Date;
@@ -21,9 +22,9 @@ export class ReservaVagaComponent implements OnInit {
 
   usuarioLogado: Usuario;
   veiculoUtilizado: Veiculo;
-  previsaoSaida:Date;
+  previsaoSaida: Date;
 
-  constructor() {
+  constructor(private reservaService: ReservaService) {
     this.preencherFormulario(new Reserva());
   }
 
@@ -51,21 +52,21 @@ export class ReservaVagaComponent implements OnInit {
     });
   }
 
-  alterarPrevisao(previsaoEmHoras:number) {
-    if(this.reservaForm){
+  alterarPrevisao(previsaoEmHoras: number) {
+    if (this.reservaForm) {
       const entrada = this.reservaForm.get('entrada').value as Date;
-      this.previsaoSaida = new Date( (entrada.getTime() + previsaoEmHoras*60*60*1000) );
-      this.reservaForm.get("saida").setValue( this.previsaoSaida );
+      this.previsaoSaida = new Date( (entrada.getTime() + previsaoEmHoras * 60 * 60 * 1000) );
+      this.reservaForm.get('saida').setValue( this.previsaoSaida );
     }
   }
 
   alterarPagamento(forma) {
-    const pagamento = this.reservaForm.get("pagamento").value;
+    const pagamento = this.reservaForm.get('pagamento').value;
     const formaPagamento = new FormaPagamento();
     formaPagamento.id = 1;
     formaPagamento.tipo = forma;
     pagamento.formaPagamnto = formaPagamento;
-    this.reservaForm.get("pagamento").setValue(pagamento);
+    this.reservaForm.get('pagamento').setValue(pagamento);
   }
 
   toggleEditar() {
@@ -76,6 +77,6 @@ export class ReservaVagaComponent implements OnInit {
   salvar() {
     console.log(this.reservaForm.getRawValue());
     const dadosFormulario = this.reservaForm.getRawValue();
-    /** @todo submeter formulário para o backend*/
+    this.reservaService.adicionar(dadosFormulario);
   }
 }

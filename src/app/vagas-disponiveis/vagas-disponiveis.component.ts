@@ -24,11 +24,11 @@ export class VagasDisponiveisComponent implements OnInit {
     } else {
       this.vagas.push(
         {codigo: 'teste', id: 1, quarteirao: new Quarteirao(), status: '1', tipo: 'deficiencia'},
-        {codigo: 'teste', id: 1, quarteirao: new Quarteirao(), status: '1', tipo: 'deficiencia'},
-        {codigo: 'teste', id: 1, quarteirao: new Quarteirao(), status: '1', tipo: 'deficiencia'},
-        {codigo: 'teste', id: 1, quarteirao: new Quarteirao(), status: '1', tipo: 'deficiencia'},
-        {codigo: 'teste', id: 1, quarteirao: new Quarteirao(), status: '1', tipo: 'deficiencia'},
-        {codigo: 'teste', id: 1, quarteirao: new Quarteirao(), status: '1', tipo: 'deficiencia'}
+        {codigo: 'teste', id: 2, quarteirao: new Quarteirao(), status: '1', tipo: 'deficiencia'},
+        {codigo: 'teste', id: 3, quarteirao: new Quarteirao(), status: '1', tipo: 'deficiencia'},
+        {codigo: 'teste', id: 4, quarteirao: new Quarteirao(), status: '1', tipo: 'deficiencia'},
+        {codigo: 'teste', id: 5, quarteirao: new Quarteirao(), status: '1', tipo: 'deficiencia'},
+        {codigo: 'teste', id: 6, quarteirao: new Quarteirao(), status: '1', tipo: 'deficiencia'}
       );
     }
 
