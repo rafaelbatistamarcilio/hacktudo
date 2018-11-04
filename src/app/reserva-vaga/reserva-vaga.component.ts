@@ -40,7 +40,7 @@ export class ReservaVagaComponent implements OnInit {
     private router: Router
     ) {
       this.vaga = new Vaga();
-    // this.preencherFormulario(new Reserva());
+    this.preencherFormulario(new Reserva());
   }
 
   ngOnInit() {
@@ -49,12 +49,15 @@ export class ReservaVagaComponent implements OnInit {
     /** @todo caso o usuário logado possua mais de 1 veículo, perguntar qual estáusando*/
     this.veiculoUtilizado = new Veiculo();
     this.veiculoUtilizado.id = 1;
+    this.veiculoUtilizado.modelo = 'corsa';
+    this.veiculoUtilizado.cor = 'azul';
+    this.veiculoUtilizado.placa = 'xpt34';
 
     /** @todo se tiver id no path buscar reserva */
 
     this.reserva = new Reserva();
     this.route.paramMap.subscribe(params => {
-      this.vaga = this.vagasService.recuperarVagaPorId(Number(params.get('id')));
+      this.vaga = this.vagasService.recuperarVagas()[0].vagas[0];
       this.reserva.vaga = this.vaga;
       this.vagaDisponivel = this.vaga.status === 'LIVRE';
       this.preencherFormulario(this.reserva);
