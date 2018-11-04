@@ -45,7 +45,7 @@ export class DenunciaService {
       {
         id: 1,
         descricao: 'veiculo ocupando vaga registrada como livre',
-        imagem: 'asdasdsad',
+        imagem: 'https://image.flaticon.com/icons/svg/23/23765.svg',
         placaInfrator: 'XTC98734',
         relator: {
           id: 1,
@@ -75,7 +75,7 @@ export class DenunciaService {
         id: 2,
         placaInfrator: 'XTC98734',
         descricao: 'veiculo ocupando vaga registrada como livre',
-        imagem: 'asdasdsad',
+        imagem: 'https://image.flaticon.com/icons/svg/23/23765.svg',
         relator: {
           id: 4,
           nome: 'Pedro',
@@ -104,7 +104,7 @@ export class DenunciaService {
         id: 3,
         descricao: 'veiculo ocupando vaga registrada como livre',
         placaInfrator: 'XTC98734',
-        imagem: 'asdasdsad',
+        imagem: 'https://image.flaticon.com/icons/svg/23/23765.svg',
         relator: {
           id: 9,
           nome: 'lauro',

@@ -70,10 +70,7 @@ export class DenunciaCadastroComponent implements OnInit {
   }
 
   vincularVaga(vagaId) {
-    console.log(this.quarteirao.vagas);
-    console.log(vagaId);
     const vagaDenuncia = this.quarteirao.vagas.find(vaga => vaga.id === Number(vagaId));
-    console.log(vagaDenuncia);
     this.form.get('vaga').setValue(vagaDenuncia);
   }
 

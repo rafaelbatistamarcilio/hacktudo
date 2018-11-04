@@ -27,7 +27,7 @@ export class DenunciaDetalheComponent implements OnInit {
   }
 
   detalharimagem(base64) {
-    console.log(base64); /**@todo detalhar usuário */
+    window.open(base64, '_blank');
   }
 
   detalharVaga(vagaId) {
