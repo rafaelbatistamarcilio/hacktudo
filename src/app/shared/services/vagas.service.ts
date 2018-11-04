@@ -178,5 +178,6 @@ export class VagasService {
             vagas: null
           }
         }]
-      }}
+      };
+    }
   }
