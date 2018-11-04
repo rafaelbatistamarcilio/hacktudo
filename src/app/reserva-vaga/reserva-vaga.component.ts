@@ -22,7 +22,7 @@ export class ReservaVagaComponent implements OnInit {
   horaReserva;
   reserva: Reserva;
   reservaForm: FormGroup;
-
+  vagaDisponivel = false;
   vaga: Vaga;
 
   hasID = false;
@@ -56,6 +56,7 @@ export class ReservaVagaComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       this.vaga = this.vagasService.recuperarVagaPorID(Number(params.get('id')));
       this.reserva.vaga = this.vaga;
+      this.vagaDisponivel = this.vaga.status === 'LIVRE';
       this.preencherFormulario(this.reserva);
     });
 

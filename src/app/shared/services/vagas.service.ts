@@ -182,22 +182,28 @@ export class VagasService {
       };
     }
 
-  recuperarVagaPorID(id: Number): Vaga {
-    return {
-      id: 1,
-      codigo: '1E',
-      status: 'LIVRE',
-      tipo: 'NORMAL',
-      quarteirao: {
-        id: 2,
-        latitude: -22.910695,
-        longitude: -43.2060407,
-        rua: {
-          id: 1,
-          nome: 'Rua das chichilas'
-        },
-        vagas: null
-      }
-    };
+  recuperarVagaPorId(id: Number) {
+    const listaVagas: Vaga[] = [];
+    this.recuperarVagas().forEach(quarteirao => listaVagas.concat(quarteirao.vagas));
+    return listaVagas.find(vaga => vaga.id === id);
   }
+
+  // recuperarVagaPorID(id: Number): Vaga {
+  //   return {
+  //     id: 1,
+  //     codigo: '1E',
+  //     status: 'LIVRE',
+  //     tipo: 'NORMAL',
+  //     quarteirao: {
+  //       id: 2,
+  //       latitude: -22.910695,
+  //       longitude: -43.2060407,
+  //       rua: {
+  //         id: 1,
+  //         nome: 'Rua das chichilas'
+  //       },
+  //       vagas: null
+  //     }
+  //   };
+  // }
   }

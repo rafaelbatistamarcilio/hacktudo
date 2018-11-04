@@ -16,6 +16,7 @@ export class DetalheVagaComponent implements OnInit {
 
   vaga: Vaga;
   hasID = true;
+  vagaDisponivel = false;
   constructor(
     public router: Router,
     public route: ActivatedRoute,
@@ -23,9 +24,11 @@ export class DetalheVagaComponent implements OnInit {
     ) {  }
 
   ngOnInit() {
-    this.route.paramMap.subscribe(params => {
-      this.vaga = this.vagasService.recuperarVagaPorID(Number(params.get('id')));
-    });
+    this.vaga = this.vagasService.recuperarVagas()[0].vagas[0];
+    // this.route.paramMap.subscribe(params => {
+    //   this.vaga = this.vagasService.recuperarVagaPorId(Number(params.get('id')));
+    //   this.vagaDisponivel = !(this.vaga.status !== 'LIVRE');
+    // });
   }
 
   toggleEditar() {
