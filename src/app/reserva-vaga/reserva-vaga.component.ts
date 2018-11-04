@@ -67,13 +67,14 @@ export class ReservaVagaComponent implements OnInit {
 
   preencherFormulario(reserva: Reserva) {
     this.dataAtual = new Date();
+    this.previsaoSaida = reserva.saida;
     this.reservaForm = new FormBuilder().group({
       entrada: [this.dataAtual, Validators.required],
       saida: [reserva.saida, Validators.required],
       veiculo: [this.veiculoUtilizado, Validators.required],
       usuario: [this.usuarioLogado, Validators.required],
       vaga: [this.vaga],
-      pagamento: [new Pagamento(), Validators.required]
+      pagamento: [reserva.pagamento, Validators.required]
     });
   }
 
