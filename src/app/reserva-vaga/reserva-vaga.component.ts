@@ -1,3 +1,5 @@
+import { VagasService } from './../shared/services/vagas.service';
+import { UsuariosService } from './../shared/services/usuarios.service';
 import { FormaPagamento } from './../shared/models/forma-pagamento.model';
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -6,6 +8,9 @@ import { Usuario } from '../shared/models/usuario.model';
 import { Veiculo } from '../shared/models/veiculo.model';
 import { Pagamento } from '../shared/models/pagamento.model';
 import { ReservaService } from '../shared/services/reserva.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Vaga } from '../shared/models/vaga.model';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-reserva-vaga',
@@ -18,27 +23,42 @@ export class ReservaVagaComponent implements OnInit {
   reserva: Reserva;
   reservaForm: FormGroup;
 
-  hasID = true;
+  vaga: Vaga;
+
+  hasID = false;
 
   usuarioLogado: Usuario;
   veiculoUtilizado: Veiculo;
   previsaoSaida: Date;
 
-  constructor(private reservaService: ReservaService) {
-    this.preencherFormulario(new Reserva());
+  constructor(
+    private reservaService: ReservaService,
+    private usuariosService: UsuariosService,
+    private vagasService: VagasService,
+    private route: ActivatedRoute,
+    private toast: ToastController,
+    private router: Router
+    ) {
+      this.vaga = new Vaga();
+    // this.preencherFormulario(new Reserva());
   }
 
   ngOnInit() {
-    /** @todo quando houver autnticação, buscar usuario do token de autenticação salvo no local storage*/
-    this.usuarioLogado = new Usuario();
-    this.usuarioLogado.id = 1;
 
+    this.usuarioLogado = this.usuariosService.getUsuarioLogado();
     /** @todo caso o usuário logado possua mais de 1 veículo, perguntar qual estáusando*/
     this.veiculoUtilizado = new Veiculo();
     this.veiculoUtilizado.id = 1;
 
     /** @todo se tiver id no path buscar reserva */
-    this.preencherFormulario(new Reserva());
+
+    this.reserva = new Reserva();
+    this.route.paramMap.subscribe(params => {
+      this.vaga = this.vagasService.recuperarVagaPorID(Number(params.get('id')));
+      this.reserva.vaga = this.vaga;
+      this.preencherFormulario(this.reserva);
+    });
+
   }
 
   preencherFormulario(reserva: Reserva) {
@@ -48,6 +68,7 @@ export class ReservaVagaComponent implements OnInit {
       saida: [reserva.saida, Validators.required],
       veiculo: [this.veiculoUtilizado, Validators.required],
       usuario: [this.usuarioLogado, Validators.required],
+      vaga: [this.vaga],
       pagamento: [new Pagamento(), Validators.required]
     });
   }
@@ -74,9 +95,17 @@ export class ReservaVagaComponent implements OnInit {
     // console.log('click' + this.hasID.valueOf);
   }
 
-  salvar() {
+  async salvar() {
     console.log(this.reservaForm.getRawValue());
     const dadosFormulario = this.reservaForm.getRawValue();
     this.reservaService.adicionar(dadosFormulario);
+    const toastObj = await this.toast.create({
+      duration: 4000,
+      message: 'Reserva realizada com sucesso',
+      position: 'bottom'
+    });
+
+    toastObj.present();
+    this.router.navigate(['reservas/lista']);
   }
 }

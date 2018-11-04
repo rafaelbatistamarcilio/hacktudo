@@ -16,13 +16,15 @@ export class DetalheVagaComponent implements OnInit {
 
   vaga: Vaga;
   hasID = true;
-  constructor(public router: Router, public route: ActivatedRoute) {  }
+  constructor(
+    public router: Router,
+    public route: ActivatedRoute,
+    private vagasService: VagasService
+    ) {  }
 
   ngOnInit() {
-    this.route.paramMap.subscribe(async params => {
-      // this.vaga = await this.VagasService.findById(Number(params.get('id')));
-      this.vaga = new Vaga();
-      this.vaga.id = 1;
+    this.route.paramMap.subscribe(params => {
+      this.vaga = this.vagasService.recuperarVagaPorID(Number(params.get('id')));
     });
   }
 

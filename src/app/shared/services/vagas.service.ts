@@ -1,3 +1,4 @@
+import { Vaga } from './../models/vaga.model';
 import { Injectable } from '@angular/core';
 import { Quarteirao } from '../models/quateirao.model';
 
@@ -180,4 +181,23 @@ export class VagasService {
         }]
       };
     }
+
+  recuperarVagaPorID(id: Number): Vaga {
+    return {
+      id: 1,
+      codigo: '1E',
+      status: 'LIVRE',
+      tipo: 'NORMAL',
+      quarteirao: {
+        id: 2,
+        latitude: -22.910695,
+        longitude: -43.2060407,
+        rua: {
+          id: 1,
+          nome: 'Rua das chichilas'
+        },
+        vagas: null
+      }
+    };
+  }
   }
