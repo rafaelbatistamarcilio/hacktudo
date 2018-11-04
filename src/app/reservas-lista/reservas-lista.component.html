@@ -6,7 +6,7 @@
     <ion-item-sliding  *ngFor="let reserva of reservas" >
       <ion-item  (click)="detalhar(reserva.id)">
         <ion-label text-wrap>
-          <ion-text color="primary"> {{reserva.entrada | date:'dd/mm/yy HH:mm:ss'}} </ion-text>
+          <ion-text color="primary"> {{reserva.entrada | date:'dd/MM/yyyy HH:mm:ss'}} </ion-text>
           <ion-text>
             <p>{{ reserva.veiculo.modelo }}</p>
           </ion-text>
