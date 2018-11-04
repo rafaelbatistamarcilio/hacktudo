@@ -10,6 +10,7 @@ import { DenunciasComponent } from './denuncias/denuncias.component';
 import { DenunciaCadastroComponent } from './denuncia-cadastro/denuncia-cadastro.component';
 import { DenunciaDetalheComponent } from './denuncia-detalhe/denuncia-detalhe.component';
 import { VagasDisponiveisComponent } from './vagas-disponiveis/vagas-disponiveis.component';
+import { ReservasListaComponent } from './reservas-lista/reservas-lista.component';
 
 
 const routes: Routes = [
@@ -48,6 +49,12 @@ const routes: Routes = [
         path: 'denuncias/detalhe/:id',
         component: DenunciaDetalheComponent
     },
+
+    {
+        path: 'reservas/lista',
+        component: ReservasListaComponent
+    },
+
     {
         path: 'despesas',
         loadChildren: './despesas/despesas.module#DespesasModule'
