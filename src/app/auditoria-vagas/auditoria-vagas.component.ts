@@ -26,7 +26,7 @@ export class AuditoriaVagasComponent implements OnInit {
   }
 
   detalhar(id) {
-    this.router.navigate(['vagas/reservar/' + id]);
+    this.router.navigate(['vagas/reserva/' + id]);
   }
 }
 

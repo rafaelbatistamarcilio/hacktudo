@@ -1,5 +1,7 @@
+import { Vaga } from './../shared/models/vaga.model';
+import { VagasService } from './../shared/services/vagas.service';
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 // import { PopoverController, NavParams } from '@ionic/angular';
 
 @Component({
@@ -12,11 +14,16 @@ export class DetalheVagaComponent implements OnInit {
   // @ViewChild('popoverContent', { read: ElementRef }) content: ElementRef;
   // @ViewChild('popoverText', { read: ElementRef }) text: ElementRef;
 
-
+  vaga: Vaga;
   hasID = true;
-  constructor(public router: Router) {  }
+  constructor(public router: Router, public route: ActivatedRoute) {  }
 
   ngOnInit() {
+    this.route.paramMap.subscribe(async params => {
+      // this.vaga = await this.VagasService.findById(Number(params.get('id')));
+      this.vaga = new Vaga();
+      this.vaga.id = 1;
+    });
   }
 
   toggleEditar() {
@@ -24,7 +31,8 @@ export class DetalheVagaComponent implements OnInit {
     // console.log('click' + this.hasID.valueOf);
   }
 
-  reservarVaga(id) {
+  reservarVaga() {
+    const id = this.vaga.id;
     this.router.navigate(['vagas/reservar/' + id]);
   }
   // presentPopover(ev) {
