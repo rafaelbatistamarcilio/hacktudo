@@ -1,11 +1,4 @@
-<ion-header class="header header-md ">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button mode="md" defaultHref="home"></ion-back-button>
-    </ion-buttons>
-    <ion-title class="title-md "> Voltar </ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header titulo="Minhas reservas"></app-header>
 
 <ion-content fullscreen>
   <ion-list lines="full" class="scroll-content">
@@ -13,11 +6,11 @@
     <ion-item-sliding  *ngFor="let reserva of reservas" >
       <ion-item  (click)="detalhar(reserva.id)">
         <ion-label text-wrap>
-          <ion-text color="primary"> {{reserva.usuario.nome}} </ion-text>
+          <ion-text color="primary"> {{reserva.entrada | date:'dd/mm/yy HH:mm:ss'}} </ion-text>
           <ion-text>
-            <p>{{reserva.entrada | date:'dd/mm/yy HH:mm:ss'}}</p>
+            <p>{{ reserva.veiculo.modelo }}</p>
           </ion-text>
-          <p style="overflow: hidden"> Denciada por {{ reserva.veiculo.modelo }}</p>
+          <p style="overflow: hidden"> Status {{ reserva.status }}</p>
         </ion-label>
       </ion-item>
 
