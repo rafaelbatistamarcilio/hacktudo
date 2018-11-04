@@ -1,3 +1,4 @@
+import { DenunciaService } from './../shared/services/denuncia.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Denuncia } from '../shared/models/denuncia.model';
@@ -5,6 +6,8 @@ import { Usuario } from '../shared/models/usuario.model';
 import { Quarteirao } from '../shared/models/quateirao.model';
 import { Vaga } from '../shared/models/vaga.model';
 import { VagasService } from '../shared/services/vagas.service';
+import { ToastController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-denuncia-cadastro',
@@ -19,10 +22,18 @@ export class DenunciaCadastroComponent implements OnInit {
   quarteirao: Quarteirao;
   dataAtual: Date;
 
-  constructor(private vagasService: VagasService) {
+  constructor(
+    private vagasService: VagasService,
+    private denunciaService: DenunciaService,
+    private toast: ToastController,
+    private router: Router) {
+
     this.imagem = 'https://image.flaticon.com/icons/svg/23/23765.svg';
     this.dataAtual = new Date();
     this.quarteirao = this.vagasService.recuperarVagas()[0];
+    this.usuarioLogado = new Usuario();
+    this.usuarioLogado.nome = 'João';
+    this.usuarioLogado.id = new Date().getTime();
   }
 
   ngOnInit() {
@@ -59,15 +70,26 @@ export class DenunciaCadastroComponent implements OnInit {
   }
 
   vincularVaga(vagaId) {
-    const vaga = new Vaga();
-    vaga.id = vagaId;
-    this.form.get('vaga').setValue(vaga);
+    console.log(this.quarteirao.vagas);
+    console.log(vagaId);
+    const vagaDenuncia = this.quarteirao.vagas.find(vaga => vaga.id === Number(vagaId));
+    console.log(vagaDenuncia);
+    this.form.get('vaga').setValue(vagaDenuncia);
   }
 
-  salvar() {
+  async salvar() {
     const dados = this.form.getRawValue() as Denuncia;
     dados.relator = this.usuarioLogado;
     dados.imagem = this.imagem;
-    console.log(this.form.getRawValue());
+
+    this.denunciaService.salvar(dados);
+    const toastObj = await this.toast.create({
+      duration: 4000,
+      message: 'Denuncia cadastrada com sucesso',
+      position: 'bottom'
+    });
+
+    toastObj.present();
+    this.router.navigate(['denuncias/lista']);
   }
 }

@@ -6,10 +6,42 @@ import { Denuncia } from '../models/denuncia.model';
 })
 export class DenunciaService {
 
-  constructor() { }
+  denuncias: Denuncia[];
+
+  constructor() {
+    this.mockDenuncias();
+  }
 
   recuperarDenuncias(): Denuncia[] {
-    return [
+    return this.denuncias;
+  }
+
+  recuperarPorId(id) {
+    return this.recuperarDenuncias().find(denuncia => denuncia.id === id);
+  }
+
+  salvar(denuncia: Denuncia): Denuncia {
+    denuncia.id = new Date().getTime();
+    this.denuncias.push(denuncia);
+    return denuncia;
+  }
+
+  atualizar(update: Denuncia): Denuncia {
+    this.denuncias.forEach(denuncia => {
+      if (denuncia.id === update.id) {
+        denuncia = update;
+      }
+    });
+    return update;
+  }
+
+  excluir(id): void {
+    const listaNova = this.denuncias.filter(obj => obj.id !== id);
+    this.denuncias = listaNova;
+  }
+
+  mockDenuncias() {
+    this.denuncias = [
       {
         id: 1,
         descricao: 'veiculo ocupando vaga registrada como livre',
@@ -98,9 +130,5 @@ export class DenunciaService {
         }
       }
     ];
-  }
-
-  recuperarPorId(id) {
-    return this.recuperarDenuncias().find(denuncia => denuncia.id === id);
   }
 }

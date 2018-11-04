@@ -4,9 +4,9 @@
       <ion-back-button mode="md" defaultHref="home"></ion-back-button>
     </ion-buttons>
     <ion-title class="title-md "> Voltar </ion-title>
-    <ion-buttons slot="end">
+    <!-- <ion-buttons slot="end">
       <ion-button name="create" >Editar</ion-button>
-    </ion-buttons>
+    </ion-buttons> -->
   </ion-toolbar>
 </ion-header>
 
@@ -45,7 +45,7 @@
           <ion-select [interfaceOptions]="{header:'Código da vaga'}"
             interface="action-sheet" cancelText="Cancelar" class="form-control"
             (ionChange)="vincularVaga($event.target.value)" >
-            <ion-select-option *ngFor="let vaga of quarteirao.vagas" value="vaga.idd">{{ vaga.codigo }}</ion-select-option>
+            <ion-select-option *ngFor="let vaga of quarteirao.vagas" [value]="vaga.id">{{ vaga.codigo }}</ion-select-option>
           </ion-select>
         </ion-item>
         

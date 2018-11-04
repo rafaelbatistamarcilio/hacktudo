@@ -18,7 +18,7 @@ export class ReservaService {
   }
 
   adicionar(reserva: Reserva): Reserva {
-    reserva.id = this.reservas.length + 1;
+    reserva.id = new Date().getTime();
     this.reservas.push(reserva);
     return reserva;
   }
